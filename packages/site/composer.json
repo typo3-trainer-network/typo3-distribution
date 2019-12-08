@@ -1,6 +1,6 @@
 {
-    "name": "ttn/site-developer",
-    "description": "Sitepackage for developer training",
+    "name": "ttn/site",
+    "description": "Sitepackage for TYPO3 Trainer Network trainings",
     "type": "typo3-cms-extension",
     "keywords": [
         "typo3",
@@ -20,21 +20,15 @@
     },
     "require": {
         "php": "~7.2 || ~7.3 || ~7.4",
-        "typo3/cms-core": "^9.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "TTN\\SiteDeveloper\\": "Classes/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "TTN\\SiteDeveloper\\Tests\\": "Tests/"
-        }
+        "typo3/cms-backend": "^9.5",
+        "typo3/cms-core": "^9.5",
+        "typo3/cms-fluid-styled-content": "^9.5",
+        "typo3/cms-fluid": "^9.5",
+        "typo3/cms-frontend": "^9.5"
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "site_developer"
+            "extension-key": "site"
         }
     }
 }

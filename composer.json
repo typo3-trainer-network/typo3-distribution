@@ -20,42 +20,27 @@
     "repositories": [
         {
             "type": "path",
-            "url": "localPackages/*"
+            "url": "packages/*"
         }
     ],
     "require": {
         "php": "~7.2 || ~7.3 || ~7.4",
-        "helmich/typo3-typoscript-lint": "^2.0",
-        "squizlabs/php_codesniffer": "^3.5",
-        "ttn/books": "^1.0",
-        "ttn/site-developer": "*",
-        "ttn/tea": "^2.0",
-        "typo3/cms-backend": "*",
+        "ttn/books": "@dev",
+        "ttn/site": "@dev",
+        "ttn/tea": "@dev",
+        "typo3/cms-backend": "^9.5",
         "typo3/cms-core": "^9.5",
-        "typo3/cms-frontend": "*",
-        "typo3/cms-install": "*",
-        "typo3/cms-lowlevel": "*"
+        "typo3/cms-fluid-styled-content": "^9.5",
+        "typo3/cms-frontend": "^9.5",
+        "typo3/cms-install": "^9.5",
+        "typo3/cms-lowlevel": "^9.5",
+        "typo3/cms-tstemplate": "^9.5"
     },
     "require-dev": {
         "helhum/typo3-console": "^5.7",
-        "typo3/cms-fluid-styled-content": "*",
-        "typo3/cms-tstemplate": "*"
+        "helmich/typo3-typoscript-lint": "^2.0.1",
+        "squizlabs/php_codesniffer": "^3.5.3"
     },
-    "replace": {
-        "typo3-ter/typo3-distribution": "self.version"
-    },
-    "autoload": {
-        "psr-4": {
-            "TTN\\Typo3Distribution\\": "Classes/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "TTN\\Typo3Distribution\\Tests\\": "Tests/"
-        }
-    },
-    "prefer-stable": true,
-    "minimum-stability": "dev",
     "config": {
         "preferred-install": {
             "*": "dist"
@@ -66,11 +51,12 @@
         "post-autoload-dump": [
             "typo3cms install:generatepackagestates",
             "typo3cms database:updateschema \"*\"",
+            "typo3cms database:updateschema \"*\"",
             "typo3cms cache:flush"
         ],
-        "ci:php:lint": "find *.php localPackages/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
-        "ci:php:sniff": "phpcs localPackages/",
-        "ci:ts:lint": "typoscript-lint -c TsLint.yml --ansi -n --fail-on-warnings localPackages/*/Configuration/TypoScript/",
+        "ci:php:lint": "find public/typo3conf/ packages/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
+        "ci:php:sniff": "phpcs packages/",
+        "ci:ts:lint": "typoscript-lint -c config/TsLint.yml --ansi -n --fail-on-warnings packages/*/Configuration/TypoScript/",
         "ci:static": [
             "@ci:php:lint",
             "@ci:php:sniff",

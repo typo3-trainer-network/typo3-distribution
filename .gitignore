@@ -1,9 +1,7 @@
-# For now, as extensions are in dev mode
-/composer.lock
-/var/*
-!/var/sqlite/
-/vendor
 /public/*
 !/public/typo3conf
 /public/typo3conf/*
 !/public/typo3conf/LocalConfiguration.php
+/var/*
+!/var/sqlite/
+/vendor

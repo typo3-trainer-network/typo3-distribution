@@ -1,4 +1,4 @@
-base: developer/
+base: /
 baseVariants: {  }
 errorHandling: {  }
 languages:

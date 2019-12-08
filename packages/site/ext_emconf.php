@@ -1,7 +1,8 @@
 <?php
+
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Developer Site',
-    'description' => 'Sitepackage for developer training',
+    'title' => 'Site',
+    'description' => 'Sitepackage for TYPO3 Trainer Network trainings',
     'version' => '1.0.x-dev',
     'category' => 'example',
     'constraints' => [
@@ -14,14 +15,4 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'TYPO3 Trainer Network',
     'author_email' => 'trainer-network@typo3.org',
     'author_company' => 'TYPO3 Trainer Network',
-    'autoload' => [
-        'psr-4' => [
-            'TTN\\SiteDeveloper\\' => 'Classes/',
-        ],
-    ],
-    'autoload-dev' => [
-        'psr-4' => [
-            'TTN\\SiteDeveloper\\Tests\\' => 'Tests/',
-        ],
-    ],
 ];

@@ -1,8 +1,8 @@
 page = PAGE
 page {
     includeCSS {
-        bootstrap = EXT:site_developer/Resources/Public/Css/bootstrap.min.css
-        custom = EXT:site_developer/Resources/Public/Css/custom.css
+        bootstrap = EXT:site/Resources/Public/Css/bootstrap.min.css
+        custom = EXT:site/Resources/Public/Css/custom.css
     }
 
     meta {
@@ -14,22 +14,22 @@ page {
         templateName = Default
 
         layoutRootPaths {
-            10 = EXT:site_developer/Resources/Private/Layouts/Page/
+            10 = EXT:site/Resources/Private/Layouts/Page/
         }
 
         partialRootPaths {
-            10 = EXT:site_developer/Resources/Private/Partials/Page/
+            10 = EXT:site/Resources/Private/Partials/Page/
         }
 
         templateRootPaths {
-            10 = EXT:site_developer/Resources/Private/Templates/Page/
+            10 = EXT:site/Resources/Private/Templates/Page/
         }
 
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             10 {
                 special = list
-                special.value = 1
+                special.value = 7
                 levels = 2
             }
         }
