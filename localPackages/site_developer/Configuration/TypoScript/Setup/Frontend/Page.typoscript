@@ -30,7 +30,7 @@ page {
             10 {
                 special = list
                 special.value = 1
-                levels = 2
+                levels = 3
             }
         }
 
