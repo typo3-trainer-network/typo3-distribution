@@ -1,0 +1,8 @@
+@import 'EXT:tea/Configuration/TypoScript/constants.typoscript'
+
+plugin.tx_tea {
+    settings {
+        singleViewPageUid = 4
+    }
+}
+
