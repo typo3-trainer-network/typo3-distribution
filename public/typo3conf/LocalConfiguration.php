@@ -74,6 +74,38 @@ return [
         'transport_smtp_username' => '',
     ],
     'SYS' => [
+        'caching' => [
+            'cacheConfigurations' => [
+                'adminpanel_requestcache' => [
+                    'backend' => 'TYPO3\CMS\Core\Cache\Backend\SimpleFileBackend',
+                    'frontend' => 'TYPO3\CMS\Core\Cache\Frontend\VariableFrontend',
+                ],
+                'cache_hash' => [
+                    'backend' => 'TYPO3\CMS\Core\Cache\Backend\SimpleFileBackend',
+                ],
+                'cache_imagesizes' => [
+                    'backend' => 'TYPO3\CMS\Core\Cache\Backend\SimpleFileBackend',
+                ],
+                'cache_pages' => [
+                    'backend' => 'TYPO3\CMS\Core\Cache\Backend\SimpleFileBackend',
+                    'options' => [
+                        'compression' => '__UNSET',
+                    ],
+                ],
+                'cache_pagesection' => [
+                    'backend' => 'TYPO3\CMS\Core\Cache\Backend\SimpleFileBackend',
+                    'options' => [
+                        'compression' => '__UNSET',
+                    ],
+                ],
+                'cache_rootline' => [
+                    'backend' => 'TYPO3\CMS\Core\Cache\Backend\SimpleFileBackend',
+                ],
+                'extbase_datamapfactory_datamap' => [
+                    'backend' => 'TYPO3\CMS\Core\Cache\Backend\SimpleFileBackend',
+                ],
+            ],
+        ],
         'devIPmask' => '*',
         'displayErrors' => 1,
         'encryptionKey' => 'a31f9481865308c257c97efa940af054626d10f287b1b6dfe7f6dc8f8a185a4bda2f8cea2d4f1a9e19803f0d9fe8320c',

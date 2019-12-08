@@ -30,6 +30,7 @@
         "ttn/books": "^1.0",
         "ttn/site-developer": "*",
         "ttn/tea": "^2.0",
+        "typo3/cms-adminpanel": "*",
         "typo3/cms-backend": "*",
         "typo3/cms-core": "^9.5",
         "typo3/cms-frontend": "*",
