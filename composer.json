@@ -1,0 +1,81 @@
+{
+    "name": "ttn/typo3-distribution",
+    "description": "Example distribution by the TYPO3 Trainer Network",
+    "type": "project",
+    "keywords": [
+        "typo3",
+        "example"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "TYPO3 Trainer Network",
+            "email": "trainer-network@typo3.org"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/typo3-trainer-network/typo3-distribution/issues",
+        "source": "https://github.com/typo3-trainer-network/typo3-distribution"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "localPackages/*"
+        }
+    ],
+    "require": {
+        "php": "~7.2 || ~7.3 || ~7.4",
+        "ttn/site-developer": "*",
+        "typo3/cms-backend": "*",
+        "typo3/cms-core": "^9.5",
+        "typo3/cms-frontend": "*",
+        "typo3/cms-install": "*"
+    },
+    "require-dev": {
+        "helhum/typo3-console": "^5.7",
+        "typo3/cms-fluid-styled-content": "*",
+        "typo3/cms-tstemplate": "*"
+    },
+    "replace": {
+        "typo3-ter/typo3-distribution": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "TTN\\Typo3Distribution\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TTN\\Typo3Distribution\\Tests\\": "Tests/"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "typo3cms install:generatepackagestates"
+        ],
+        "ci:php:lint": "find *.php localPackages/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
+        "ci:static": [
+            "@ci:php:lint"
+        ],
+        "ci": [
+            "@ci:static"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        },
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": "public"
+        }
+    }
+}

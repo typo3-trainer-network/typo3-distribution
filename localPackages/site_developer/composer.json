@@ -1,0 +1,40 @@
+{
+    "name": "ttn/site-developer",
+    "description": "Sitepackage for developer training",
+    "type": "typo3-cms-extension",
+    "keywords": [
+        "typo3",
+        "example",
+        "extension"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "TYPO3 Trainer Network",
+            "email": "trainer-network@typo3.org"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/typo3-trainer-network/typo3-distribution/issues",
+        "source": "https://github.com/typo3-trainer-network/typo3-distribution"
+    },
+    "require": {
+        "php": "~7.2 || ~7.3 || ~7.4",
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "TTN\\SiteDeveloper\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TTN\\SiteDeveloper\\Tests\\": "Tests/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "site_developer"
+        }
+    }
+}
