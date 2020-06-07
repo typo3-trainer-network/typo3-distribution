@@ -1,0 +1,42 @@
+page = PAGE
+page {
+    includeCSS {
+        bootstrap = EXT:site/Resources/Public/Css/bootstrap.min.css
+        custom = EXT:site/Resources/Public/Css/custom.css
+    }
+
+    meta {
+        viewport = width=device-width, initial-scale=1
+    }
+
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = Default
+
+        layoutRootPaths {
+            10 = EXT:site/Resources/Private/Layouts/Page/
+        }
+
+        partialRootPaths {
+            10 = EXT:site/Resources/Private/Partials/Page/
+        }
+
+        templateRootPaths {
+            10 = EXT:site/Resources/Private/Templates/Page/
+        }
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                special = list
+                special.value = 7
+                levels = 2
+            }
+        }
+
+        variables {
+            content =< styles.content.get
+        }
+    }
+}
+

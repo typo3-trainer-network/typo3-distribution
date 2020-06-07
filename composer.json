@@ -1,0 +1,78 @@
+{
+    "name": "ttn/typo3-distribution",
+    "description": "Example distribution by the TYPO3 Trainer Network",
+    "type": "project",
+    "keywords": [
+        "typo3",
+        "example"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "TYPO3 Trainer Network",
+            "email": "trainer-network@typo3.org"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/typo3-trainer-network/typo3-distribution/issues",
+        "source": "https://github.com/typo3-trainer-network/typo3-distribution"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/*"
+        }
+    ],
+    "require": {
+        "php": "~7.2 || ~7.3 || ~7.4",
+        "ttn/books": "@dev",
+        "ttn/site": "@dev",
+        "ttn/tea": "@dev",
+        "typo3/cms-backend": "^9.5",
+        "typo3/cms-core": "^9.5",
+        "typo3/cms-fluid-styled-content": "^9.5",
+        "typo3/cms-frontend": "^9.5",
+        "typo3/cms-install": "^9.5",
+        "typo3/cms-lowlevel": "^9.5",
+        "typo3/cms-tstemplate": "^9.5"
+    },
+    "require-dev": {
+        "helhum/typo3-console": "^5.7",
+        "helmich/typo3-typoscript-lint": "^2.0.1",
+        "squizlabs/php_codesniffer": "^3.5.3"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "typo3cms install:generatepackagestates",
+            "typo3cms database:updateschema \"*\"",
+            "typo3cms database:updateschema \"*\"",
+            "typo3cms cache:flush"
+        ],
+        "ci:php:lint": "find public/typo3conf/ packages/ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
+        "ci:php:sniff": "phpcs packages/",
+        "ci:ts:lint": "typoscript-lint -c config/TsLint.yml --ansi -n --fail-on-warnings packages/*/Configuration/TypoScript/",
+        "ci:static": [
+            "@ci:php:lint",
+            "@ci:php:sniff",
+            "@ci:ts:lint"
+        ],
+        "ci": [
+            "@ci:static"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        },
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": "public"
+        }
+    }
+}

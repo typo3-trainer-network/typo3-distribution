@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div class="header d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal">
+            <a href="{menu.0.link}" class="text-dark">
+                {menu.0.title}
+            </a>
+        </h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <f:for each="{menu.0.children}" as="page">
+                <a class="p-2 text-dark" href="{page.link}">
+                    {page.title}
+                </a>
+            </f:for>
+        </nav>
+    </div>
+
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">
+            {data.title}
+        </h1>
+        <f:if condition="{data.abstract}">
+            <p class="lead">
+                {data.abstract}
+            </p>
+        </f:if>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col12">
+                {f:render(section: 'Content', arguments: _all)}
+            </div>
+        </div>
+    </div>
+</html>

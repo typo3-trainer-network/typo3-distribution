@@ -1,0 +1,2 @@
+@import 'EXT:site/Configuration/TypoScript/Setup/Extensions/'
+@import 'EXT:site/Configuration/TypoScript/Setup/Frontend/'
