@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f62c4a18afc6f3dcee61c4eb622a425c",
+    "content-hash": "55e7c8d9cf3fa8fbd213168bb99cf419",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -3061,7 +3061,7 @@
         },
         {
             "name": "ttn/site",
-            "version": "dev-feature/init",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "packages/site",
@@ -3110,12 +3110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-Documentation/tea.git",
-                "reference": "74813e9a0c198219af3617dde0e05cfc6fc58229"
+                "reference": "95a0d5841643489c4dc44183b554e5a047a1a4f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-Documentation/tea/zipball/74813e9a0c198219af3617dde0e05cfc6fc58229",
-                "reference": "74813e9a0c198219af3617dde0e05cfc6fc58229",
+                "url": "https://api.github.com/repos/TYPO3-Documentation/tea/zipball/95a0d5841643489c4dc44183b554e5a047a1a4f3",
+                "reference": "95a0d5841643489c4dc44183b554e5a047a1a4f3",
                 "shasum": ""
             },
             "require": {
@@ -3178,7 +3178,7 @@
                 "typo3",
                 "unit testing"
             ],
-            "time": "2020-06-06T21:09:20+00:00"
+            "time": "2020-06-24T13:31:29+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -4422,8 +4422,11 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "~7.2 || ~7.3 || ~7.4"
+        "php": "~7.2.0 || ~7.3.0 || ~7.4.0"
     },
     "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.2.9"
+    },
     "plugin-api-version": "1.1.0"
 }
