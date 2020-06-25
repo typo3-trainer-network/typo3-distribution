@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76f78828a40c36660808c1fb5971a9b5",
+    "content-hash": "0def0e1df0729a15948123c370d836cb",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -3741,6 +3741,57 @@
                 }
             ],
             "description": "A framework to build extensions for TYPO3 CMS.",
+            "homepage": "https://typo3.org",
+            "time": "2020-06-09T08:44:34+00:00"
+        },
+        {
+            "name": "typo3/cms-filelist",
+            "version": "v9.5.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/filelist.git",
+                "reference": "67ace83e9acddf1a08276a801dccf7874f1ddd16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/filelist/zipball/67ace83e9acddf1a08276a801dccf7874f1ddd16",
+                "reference": "67ace83e9acddf1a08276a801dccf7874f1ddd16",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "9.5.19"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "typo3/cms": {
+                    "Package": {
+                        "protected": true,
+                        "partOfFactoryDefault": true,
+                        "partOfMinimalUsableSystem": true
+                    },
+                    "extension-key": "filelist"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\Filelist\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Listing of files in the directory",
             "homepage": "https://typo3.org",
             "time": "2020-06-09T08:44:34+00:00"
         },

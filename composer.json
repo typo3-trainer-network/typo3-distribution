@@ -31,6 +31,7 @@
         "typo3/cms-backend": "^9.5",
         "typo3/cms-core": "^9.5.19",
         "typo3/cms-fluid-styled-content": "^9.5",
+        "typo3/cms-filelist": "^9.5",
         "typo3/cms-frontend": "^9.5",
         "typo3/cms-install": "^9.5",
         "typo3/cms-lowlevel": "^9.5",
@@ -52,6 +53,8 @@
     },
     "scripts": {
         "post-autoload-dump": [
+            "typo3cms install:fixfolderstructure",
+            "typo3cms install:extensionsetupifpossible",
             "typo3cms install:generatepackagestates",
             "typo3cms database:updateschema \"*\"",
             "typo3cms database:updateschema \"*\"",
@@ -70,7 +73,8 @@
         ],
         "typo3:server": "TYPO3_CONTEXT=Development php -S 127.0.0.1:8080 -t public",
         "typo3:db:compact": [
-            "typo3cms database:updateschema",
+            "typo3cms database:updateschema \"*\"",
+            "typo3cms database:updateschema \"*\"",
             "typo3cms cache:flush",
             "typo3cms cleanup:updatereferenceindex",
             "typo3cms cleanup:multiplereferencedfiles",
