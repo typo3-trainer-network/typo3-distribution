@@ -67,7 +67,8 @@
         ],
         "ci": [
             "@ci:static"
-        ]
+        ],
+        "typo3:server": "TYPO3_CONTEXT=Development php -S 127.0.0.1:8080 -t public"
     },
     "extra": {
         "branch-alias": {
