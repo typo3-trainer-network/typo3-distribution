@@ -1,5 +1,7 @@
 # TYPO3 Trainer Network Distribution
 
+[![CI Status](https://github.com/typo3-trainer-network/typo3-distribution/workflows/CI/badge.svg)](https://github.com/typo3-trainer-network/typo3-distribution/actions)
+
 This TYPO3 distribution contains an example TYPO3 installation.
 This installation includes all extensions and examples used during official trainings.
 
