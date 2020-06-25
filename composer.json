@@ -72,7 +72,6 @@
         "typo3:db:compact": [
             "typo3cms database:updateschema",
             "typo3cms cache:flush",
-            "typo3cms cleanup:deletedrecords",
             "typo3cms cleanup:updatereferenceindex",
             "typo3cms cleanup:multiplereferencedfiles",
             "typo3cms cleanup:orphanrecords"
