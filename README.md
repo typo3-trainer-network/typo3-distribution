@@ -22,6 +22,11 @@ Backend administrator
 Install tool Password
 - `itp`
 
+## Compacting the database after a change
+
+If you (a developer of this distribution) have changed the database and would like to
+compact it before committing it, please run `composer typo3:db:compact`.
+
 ## License
 
 The code is licensed under the Gnu General Public License V2.
