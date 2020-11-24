@@ -11,12 +11,13 @@ jobs:
     name: "PHP linter"
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout
+      - name: "Checkout"
         uses: actions/checkout@v2
       - name: "Install PHP"
         uses: shivammathur/setup-php@v2
         with:
           php-version: "${{ matrix.php-version }}"
+          tools: composer:v2
       - name: "Run PHP lint"
         run: "composer ci:php:lint"
     strategy:
@@ -25,6 +26,7 @@ jobs:
           - 7.2
           - 7.3
           - 7.4
+          - 8.0
   code-quality:
     name: "Code quality checks"
     runs-on: ubuntu-20.04
